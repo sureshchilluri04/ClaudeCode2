@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JM Solutions — Double Your Agency's Client Delivery in 30 Days</title>
+<meta name="description" content="JM Solutions is an AI automation agency that builds delivery systems for marketing agencies, helping them double client delivery in 30 days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07090f;
+    --bg-2: #0d111b;
+    --card: #111726;
+    --line: #1f2740;
+    --text: #e8ecf6;
+    --muted: #8d97b3;
+    --accent: #5b8cff;
+    --accent-2: #22d3a6;
+    --grad: linear-gradient(120deg, #5b8cff 0%, #22d3a6 100%);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .logo { font-family: 'Space Grotesk', 'Inter', sans-serif; line-height: 1.1; letter-spacing: -0.02em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 96px 0; }
+  .eyebrow { color: var(--accent-2); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 14px; }
+  h2 { font-size: clamp(30px, 4.5vw, 46px); margin-bottom: 16px; }
+  .lead { color: var(--muted); font-size: 18px; max-width: 640px; }
+  .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* nav */
+  nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px); background: rgba(7,9,15,.75); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+  .logo i { width: 28px; height: 28px; border-radius: 8px; background: var(--grad); display: inline-block; }
+  nav ul { display: flex; gap: 28px; list-style: none; font-size: 15px; color: var(--muted); }
+  nav ul a:hover { color: var(--text); }
+  .btn { display: inline-block; padding: 13px 24px; border-radius: 10px; font-weight: 600; font-size: 15px; border: 1px solid transparent; cursor: pointer; transition: transform .15s, box-shadow .15s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--grad); color: #04101a; box-shadow: 0 8px 30px -8px rgba(91,140,255,.6); }
+  .btn-ghost { border-color: var(--line); color: var(--text); background: transparent; }
+  .btn-ghost:hover { border-color: var(--accent); }
+  nav .btn { padding: 10px 18px; }
+
+  /* hero */
+  .hero { padding: 110px 0 90px; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; width: 700px; height: 700px; right: -200px; top: -250px; background: radial-gradient(circle, rgba(91,140,255,.22), transparent 65%); pointer-events: none; }
+  .hero::after { content: ""; position: absolute; width: 500px; height: 500px; left: -200px; bottom: -250px; background: radial-gradient(circle, rgba(34,211,166,.14), transparent 65%); pointer-events: none; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: var(--bg-2); padding: 7px 14px; border-radius: 999px; font-size: 13px; color: var(--muted); margin-bottom: 26px; }
+  .pill b { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 10px var(--accent-2); }
+  .hero h1 { font-size: clamp(40px, 7vw, 76px); max-width: 880px; margin-bottom: 24px; }
+  .hero p { font-size: 20px; color: var(--muted); max-width: 640px; margin-bottom: 36px; }
+  .cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 72px; position: relative; z-index: 1; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+  .stat strong { font-family: 'Space Grotesk'; font-size: 38px; display: block; }
+  .stat span { color: var(--muted); font-size: 14px; }
+
+  /* problem */
+  .problem { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .pain { list-style: none; display: grid; gap: 14px; }
+  .pain li { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; display: flex; gap: 14px; }
+  .pain li::before { content: "✕"; color: #ff6b6b; font-weight: 700; }
+
+  /* services */
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 30px; transition: border-color .2s, transform .2s; }
+  .card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .icon { width: 46px; height: 46px; border-radius: 12px; background: rgba(91,140,255,.12); display: grid; place-items: center; font-size: 22px; margin-bottom: 20px; }
+  .card h3 { font-size: 21px; margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: 15px; }
+
+  /* process */
+  .process { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; }
+  .step { position: relative; padding: 26px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+  .step small { color: var(--accent-2); font-weight: 600; letter-spacing: .1em; }
+  .step h3 { font-size: 20px; margin: 10px 0; }
+  .step p { color: var(--muted); font-size: 14.5px; }
+
+  /* results */
+  .quote { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 30px; }
+  .quote p { font-size: 17px; margin-bottom: 20px; }
+  .quote cite { color: var(--muted); font-style: normal; font-size: 14px; }
+  .quote .big { font-family: 'Space Grotesk'; font-size: 34px; display: block; margin-bottom: 12px; }
+
+  /* faq */
+  .faq { max-width: 760px; margin-top: 40px; }
+  details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+  summary { cursor: pointer; font-weight: 600; font-size: 18px; list-style: none; display: flex; justify-content: space-between; }
+  summary::after { content: "+"; color: var(--accent-2); font-size: 22px; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); margin-top: 12px; }
+
+  /* contact */
+  .contact { background: var(--bg-2); border-top: 1px solid var(--line); }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  form { display: grid; gap: 14px; }
+  input, textarea, select { width: 100%; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; color: var(--text); font: inherit; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--accent); }
+  .ok { display: none; color: var(--accent-2); font-weight: 600; }
+
+  footer { padding: 32px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  @media (max-width: 900px) {
+    nav ul { display: none; }
+    .stats, .steps { grid-template-columns: 1fr 1fr; }
+    .grid3, .cols, .box { grid-template-columns: 1fr; }
+    .box { padding: 28px; }
+    section { padding: 68px 0; }
+  }
+  @media (max-width: 520px) { .stats, .steps { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo"><i></i>JM Solutions</a>
+    <ul>
+      <li><a href="#problem">The Problem</a></li>
+      <li><a href="#services">What We Build</a></li>
+      <li><a href="#process">30-Day Plan</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary">Book a Call</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="pill"><b></b> AI automation for marketing agencies</div>
+    <h1>Double your client delivery in <span class="grad">30 days.</span></h1>
+    <p>JM Solutions builds AI-powered delivery systems for marketing agencies, so you can take on more clients without hiring more people or burning out your team.</p>
+    <div class="cta">
+      <a href="#contact" class="btn btn-primary">Get Your Delivery Audit</a>
+      <a href="#process" class="btn btn-ghost">See the 30-day plan</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong class="grad">2×</strong><span>client capacity in 30 days</span></div>
+      <div class="stat"><strong class="grad">60%</strong><span>less manual production time</span></div>
+      <div class="stat"><strong class="grad">0</strong><span>extra hires required</span></div>
+      <div class="stat"><strong class="grad">30</strong><span>days to a live system</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="problem" id="problem">
+  <div class="wrap cols">
+    <div>
+      <div class="eyebrow">The bottleneck</div>
+      <h2>Your agency doesn't have a sales problem. It has a delivery problem.</h2>
+      <p class="lead">Every new client adds more reporting, more content, more revisions, more status updates. Growth stalls because delivery doesn't scale, not because demand dries up.</p>
+    </div>
+    <ul class="pain">
+      <li>Deliverables depend on a few overworked people</li>
+      <li>Reporting and client updates eat entire days</li>
+      <li>Onboarding a new client takes weeks, not hours</li>
+      <li>Quality varies from account to account</li>
+      <li>You turn down work because the team is full</li>
+    </ul>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What we build</div>
+    <h2>A delivery engine, built around how you already work.</h2>
+    <p class="lead">We don't sell generic tools. We design and install the automations that remove your biggest delivery constraints.</p>
+    <div class="grid3">
+      <div class="card"><div class="icon">⚙️</div><h3>Workflow Automation</h3><p>Briefs, approvals, handoffs and task creation run themselves across your PM, CRM and communication tools.</p></div>
+      <div class="card"><div class="icon">✍️</div><h3>AI Content Production</h3><p>On-brand drafts for ads, email, social and SEO, with human review gates so quality stays high.</p></div>
+      <div class="card"><div class="icon">📊</div><h3>Automated Reporting</h3><p>Live dashboards and client-ready performance summaries generated weekly without anyone opening a spreadsheet.</p></div>
+      <div class="card"><div class="icon">🚀</div><h3>Client Onboarding Systems</h3><p>From signed contract to kickoff in a day: intake forms, asset collection, access requests and project setup, automated.</p></div>
+      <div class="card"><div class="icon">🧠</div><h3>Custom AI Agents</h3><p>Agents trained on your processes and voice that handle research, QA checks and routine client communication.</p></div>
+      <div class="card"><div class="icon">🎓</div><h3>Team Training &amp; SOPs</h3><p>Your team learns to run and extend the system. Everything is documented so you're never dependent on us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="eyebrow">The 30-day plan</div>
+    <h2>From bottleneck to double capacity in four weeks.</h2>
+    <div class="steps">
+      <div class="step"><small>WEEK 1</small><h3>Audit &amp; Map</h3><p>We map your delivery workflow end to end and find the highest-leverage automation targets.</p></div>
+      <div class="step"><small>WEEK 2</small><h3>Design &amp; Build</h3><p>We build the core systems: workflows, AI agents, templates and integrations.</p></div>
+      <div class="step"><small>WEEK 3</small><h3>Launch &amp; Test</h3><p>Systems go live on real client work with your team, and we tune quality and speed.</p></div>
+      <div class="step"><small>WEEK 4</small><h3>Scale &amp; Hand Off</h3><p>We train your team, document the SOPs and open the capacity to onboard more clients.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <div class="eyebrow">Results</div>
+    <h2>What agencies can expect.</h2>
+    <p class="lead">Illustrative outcomes based on the type of systems we install. Replace with your real case studies as they come in.</p>
+    <div class="grid3">
+      <div class="quote"><span class="big grad">2× clients</span><p>"We went from 12 to 24 active retainers without adding a single hire."</p><cite>— Founder, performance marketing agency (sample)</cite></div>
+      <div class="quote"><span class="big grad">−15 hrs/wk</span><p>"Reporting used to take our team two days a week. Now it's done before Monday's standup."</p><cite>— Head of Ops, content agency (sample)</cite></div>
+      <div class="quote"><span class="big grad">1-day onboarding</span><p>"New clients are kicked off in a day instead of three weeks. It changed how we sell."</p><cite>— Agency owner, social media agency (sample)</cite></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2>Common questions.</h2>
+    <div class="faq">
+      <details><summary>Who is this for?</summary><p>Marketing agencies (SEO, paid media, content, social, creative) that have demand but are capped by how much their team can deliver.</p></details>
+      <details><summary>Will AI replace my team?</summary><p>No. We automate repetitive production and admin work so your people spend time on strategy and client relationships. Human review gates stay in place.</p></details>
+      <details><summary>Do I need to change my tools?</summary><p>Usually not. We build on top of the tools you already use and only recommend new ones where they clearly help.</p></details>
+      <details><summary>What if we don't double in 30 days?</summary><p>We scope the engagement around a measurable capacity target during the audit, so you know exactly what to expect before you commit.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <div class="eyebrow">Get started</div>
+        <h2>Book your free delivery audit.</h2>
+        <p class="lead">Tell us about your agency. We'll show you where automation can unlock the most capacity and what the 30-day plan would look like.</p>
+      </div>
+      <form id="lead-form">
+        <input required name="name" placeholder="Your name">
+        <input required type="email" name="email" placeholder="Work email">
+        <input name="agency" placeholder="Agency name &amp; website">
+        <select name="size" aria-label="Team size">
+          <option>Team size: 1–5</option><option>6–15</option><option>16–50</option><option>50+</option>
+        </select>
+        <textarea name="msg" rows="3" placeholder="What's your biggest delivery bottleneck?"></textarea>
+        <button class="btn btn-primary" type="submit">Request My Audit</button>
+        <div class="ok" id="ok">Thanks! We'll be in touch within one business day.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> JM Solutions. All rights reserved.</span>
+    <span>AI automation for marketing agencies</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // Demo only: no backend yet. Wire this to your CRM/email/form service.
+  document.getElementById('lead-form').addEventListener('submit', e => {
+    e.preventDefault();
+    e.target.querySelectorAll('input,textarea,select,button').forEach(el => el.disabled = true);
+    document.getElementById('ok').style.display = 'block';
+  });
+</script>
+</body>
+</html>

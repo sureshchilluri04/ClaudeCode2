@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JM Solutions | Double Your Agency's Client Delivery in 30 Days</title>
+<meta name="description" content="JM Solutions is an AI automation agency that builds delivery systems for marketing agencies, helping them double client delivery in 30 days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070B1A; --bg2:#0D1330; --card:#111937; --line:#243056;
+  --text:#F1F5F9; --muted:#A8B3CF;
+  --primary:#6366F1; --accent:#22D3EE; --cta:#22D3EE; --cta-text:#04121A;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:17px;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* nav (floating) */
+nav{position:fixed;top:14px;left:14px;right:14px;z-index:50}
+.nav-in{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-radius:999px;background:rgba(13,19,48,.82);border:1px solid var(--line);backdrop-filter:blur(14px)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px}
+.logo svg{width:28px;height:28px}
+.links{display:flex;gap:28px;align-items:center}
+.links a{color:var(--muted);font-weight:500;font-size:15px;transition:color .2s;cursor:pointer}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;font-family:inherit}
+.btn-cta{background:var(--cta);color:var(--cta-text)}
+.btn-cta:hover{box-shadow:0 8px 30px rgba(34,211,238,.4)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.btn-ghost:hover{background:var(--card)}
+.btn svg{width:18px;height:18px}
+.nav-cta{min-height:40px;padding:0 20px;font-size:14px}
+
+/* hero */
+.hero{position:relative;padding:170px 0 100px;text-align:center;background:radial-gradient(900px 500px at 50% -10%,rgba(99,102,241,.35),transparent 70%),radial-gradient(600px 400px at 85% 30%,rgba(34,211,238,.14),transparent 70%)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(17,25,55,.7);color:var(--muted);font-size:14px;font-weight:500;margin-bottom:28px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+h1{font-size:clamp(38px,6.2vw,70px);line-height:1.08;font-weight:800;letter-spacing:-.025em;max-width:900px;margin:0 auto 22px}
+.grad{background:linear-gradient(90deg,#818CF8,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{max-width:660px;margin:0 auto 38px;color:var(--muted);font-size:19px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:780px;margin:70px auto 0}
+.stat{padding:22px 12px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(17,25,55,.6)}
+.stat b{display:block;font-size:34px;font-weight:800;color:var(--accent)}
+.stat span{font-size:14px;color:var(--muted)}
+
+section{padding:96px 0}
+.eyebrow{color:var(--accent);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(30px,4.2vw,46px);line-height:1.15;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+.lead{color:var(--muted);max-width:640px;margin-bottom:52px}
+.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
+
+/* problem */
+.problem{background:var(--bg2)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);transition:border-color .3s,transform .3s;cursor:default}
+.card:hover{border-color:var(--primary);transform:translateY(-4px)}
+.ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(99,102,241,.16);color:#A5B4FC;margin-bottom:18px}
+.ico svg{width:24px;height:24px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:16px}
+
+/* services */
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card.feat{display:flex;gap:20px}
+.card.feat .ico{flex:none;margin:0;background:rgba(34,211,238,.12);color:var(--accent)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding:34px 30px;border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(180deg,var(--card),var(--bg2))}
+.step .n{font-size:14px;font-weight:800;color:var(--cta-text);background:var(--accent);display:inline-block;padding:4px 14px;border-radius:999px;margin-bottom:16px}
+.step h3{font-size:22px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:16px}
+.step small{display:block;margin-top:14px;color:#A5B4FC;font-weight:600}
+
+/* cta/form */
+.final{background:radial-gradient(700px 400px at 50% 0,rgba(99,102,241,.3),transparent 70%),var(--bg2)}
+.box{max-width:640px;margin:0 auto;padding:36px;border:1px solid var(--line);border-radius:24px;background:var(--card)}
+label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+input,select,textarea{width:100%;min-height:48px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;margin-bottom:18px}
+input::placeholder,textarea::placeholder{color:#7A87AA}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:var(--accent)}
+.box .btn{width:100%}
+.msg{display:none;margin-top:16px;padding:14px;border-radius:12px;background:rgba(34,211,238,.12);color:var(--accent);text-align:center;font-weight:600}
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+@media (max-width:900px){
+  .grid3,.steps{grid-template-columns:1fr}
+  .grid2{grid-template-columns:1fr}
+  .links a:not(.btn){display:none}
+}
+@media (max-width:520px){
+  .stats{grid-template-columns:1fr}
+  .hero{padding-top:140px}
+  section{padding:70px 0}
+  .box{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-in">
+    <a href="#top" class="logo" aria-label="JM Solutions home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#818CF8"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+      JM Solutions
+    </a>
+    <div class="links">
+      <a href="#problem">Problem</a><a href="#services">What we build</a><a href="#process">30-day plan</a>
+      <a href="#contact" class="btn btn-cta nav-cta">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="pill rv"><span class="dot"></span> AI automation for marketing agencies</div>
+    <h1 class="rv">Double your client delivery in <span class="grad">30 days</span></h1>
+    <p class="sub rv">We build AI-powered delivery systems that take the manual work out of reporting, content, and client ops, so your agency serves twice the clients without doubling headcount.</p>
+    <div class="cta-row rv">
+      <a href="#contact" class="btn btn-cta">Get your free delivery audit
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#process" class="btn btn-ghost">See the 30-day plan</a>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><b>2x</b><span>client capacity target</span></div>
+      <div class="stat"><b>30</b><span>days to a live system</span></div>
+      <div class="stat"><b>0</b><span>extra hires required</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="problem" id="problem">
+  <div class="wrap">
+    <div class="eyebrow">The bottleneck</div>
+    <h2 class="rv">Growth stalls when delivery runs on people</h2>
+    <p class="lead rv">Most agencies hit a ceiling: every new client means more hours, more hires, and more things slipping through the cracks.</p>
+    <div class="grid3">
+      <div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Hours lost to busywork</h3><p>Reports, briefs, and status updates eat the time your team should spend on strategy.</p></div>
+      <div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Inconsistent quality</h3><p>Output depends on who is on the account, so results vary and clients notice.</p></div>
+      <div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div><h3>Hiring to scale</h3><p>Adding headcount for every new retainer crushes margins and slows you down.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What we build</div>
+    <h2 class="rv">A delivery system, not a pile of tools</h2>
+    <p class="lead rv">We design, build, and hand over automations tailored to how your agency already works.</p>
+    <div class="grid2">
+      <div class="card feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div><div><h3>AI content pipelines</h3><p>Briefs to on-brand drafts to approvals, with human review built into every step.</p></div></div>
+      <div class="card feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><div><h3>Automated client reporting</h3><p>Live dashboards and written insights that update themselves every week.</p></div></div>
+      <div class="card feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 4v16"/></svg></div><div><h3>Onboarding &amp; ops workflows</h3><p>From signed contract to kickoff in hours, with tasks, access, and comms handled for you.</p></div></div>
+      <div class="card feat rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><h3>Team training &amp; handover</h3><p>Playbooks and training so your team owns the system long after we leave.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="problem">
+  <div class="wrap">
+    <div class="center">
+      <div class="eyebrow">The 30-day plan</div>
+      <h2 class="rv">From audit to double capacity in a month</h2>
+      <p class="lead rv">A fixed, predictable timeline with clear milestones each week.</p>
+    </div>
+    <div class="steps">
+      <div class="step rv"><span class="n">Days 1-7</span><h3>Audit &amp; map</h3><p>We map your delivery process, find the biggest time sinks, and pick the highest-impact automations.</p><small>Output: automation roadmap</small></div>
+      <div class="step rv"><span class="n">Days 8-21</span><h3>Build &amp; connect</h3><p>We build and test the workflows against your real client work, integrated with your existing stack.</p><small>Output: live delivery system</small></div>
+      <div class="step rv"><span class="n">Days 22-30</span><h3>Launch &amp; scale</h3><p>We train your team, roll out to clients, and tune until throughput is where it should be.</p><small>Output: 2x capacity</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="final" id="contact">
+  <div class="wrap center">
+    <div class="eyebrow">Get started</div>
+    <h2 class="rv">Ready to double your delivery?</h2>
+    <p class="lead rv">Tell us about your agency and we'll send a free delivery audit with where automation can save you the most time.</p>
+    <form class="box rv" id="form" style="text-align:left" novalidate>
+      <label for="name">Your name</label>
+      <input id="name" name="name" autocomplete="name" placeholder="Jane Smith" required>
+      <label for="email">Work email</label>
+      <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@youragency.com" required>
+      <label for="size">Team size</label>
+      <select id="size" name="size"><option>1-5 people</option><option>6-15 people</option><option>16-50 people</option><option>50+ people</option></select>
+      <label for="pain">Biggest delivery bottleneck</label>
+      <textarea id="pain" name="pain" rows="3" placeholder="e.g. client reporting takes 2 days a month per account"></textarea>
+      <button class="btn btn-cta" type="submit">Request my free audit</button>
+      <div class="msg" id="msg" role="status">Thanks! We'll be in touch within one business day.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot"><span>&copy; <span id="yr"></span> JM Solutions. All rights reserved.</span><span>AI automation for marketing agencies</span></div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.getElementById('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.target;
+  if(!f.name.value.trim()||!f.email.validity.valid||!f.email.value){f.reportValidity&&f.email.setCustomValidity('');(f.name.value.trim()?f.email:f.name).focus();return}
+  document.getElementById('msg').style.display='block';f.reset();
+});
+</script>
+</body>
+</html>
