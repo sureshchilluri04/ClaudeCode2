@@ -15,14 +15,27 @@ import com.example.claudecode.ui.theme.ClaudeCodeTheme
 
 /**
  * Single entry-point activity that hosts the Compose UI.
+ *
+ * The whole screen is built with Jetpack Compose (Material 3) inside [ClaudeCodeTheme];
+ * there are no XML layouts or fragments.
  */
 class MainActivity : ComponentActivity() {
+
+    /**
+     * Enables edge-to-edge rendering and sets the Compose content: a full-screen [Scaffold]
+     * that shows a [Greeting].
+     *
+     * @param savedInstanceState previously saved state, or `null` on a fresh launch (unused;
+     * Compose restores its own state)
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Draw behind the system bars; insets are applied via Scaffold's innerPadding below.
         enableEdgeToEdge()
         setContent {
+            // Apply the app's Material 3 theme (colors, typography) to everything below.
             ClaudeCodeTheme {
+                // Scaffold provides the basic screen structure and computes the system-bar insets.
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     // Pass the padding down so content isn't hidden under the system bars.
                     Greeting(
